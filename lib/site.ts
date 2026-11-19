@@ -21,6 +21,7 @@ export const site = {
   "status": "locked",
   "design": {
     "projectName": "solo-agency-legal",
+    "productionUrl": "https://solo-agency-legal.vercel.app",
     "archetype": "chambers",
     "motif": "chambers",
     "world": "Chambers folio and redline",
