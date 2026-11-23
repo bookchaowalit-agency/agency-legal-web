@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { pseoService } from '@/lib/pseo';
 import { LangText } from '@/components/lang-text';
-import SiteLinks, { portfolioHref } from '@/components/site-links';
+import SiteLinks, { hubHref, portfolioHref } from '@/components/site-links';
 import { type AgencyStatus, readinessCopy } from '@/lib/readiness';
 import { site } from '@/lib/site';
 
@@ -24,7 +24,7 @@ function Artifact() {
     case 'labnote':
       return <div className="artifact artifact-labnote" aria-hidden="true"><span className="lab-orbit orbit-one" /><span className="lab-orbit orbit-two" /><span className="lab-node lab-node-a" /><span className="lab-node lab-node-b" /><span className="lab-node lab-node-c" /><strong>TECH → IP → MARKET</strong><small>unknowns remain visible</small></div>;
     case 'chambers':
-      return <div className="artifact artifact-chambers" aria-hidden="true"><div className="chambers-seal">ก</div><div className="chambers-rule" /><strong>สิทธิ / หน้าที่ / ผู้รับผิดชอบ</strong><em>RIGHT / DUTY / OWNER</em><small>CAPABILITY FOLIO / FUTURE</small></div>;
+      return <div className="artifact artifact-chambers" aria-hidden="true"><div className="chambers-seal">ก</div><div className="chambers-rule" /><strong>สิทธิ / หน้าที่ / ผู้รับผิดชอบ</strong><em>ขอบเขต · บทบาท · เจ้าของงาน</em><small>ขีดความสามารถในอนาคต</small></div>;
     case 'capitalledger':
       return <div className="artifact artifact-capitalledger" aria-hidden="true"><div className="ledger-head"><strong>CAPITAL LEDGER</strong><span>THESIS</span></div>{labels.slice(0, 3).map((label, index) => <div className="ledger-row" key={label}><span>0{index + 1}</span><strong>{label}</strong><i /></div>)}<small>risk / governance / operations</small></div>;
     case 'clinical':
@@ -64,7 +64,7 @@ export default function HomePage() {
             <h1><LangText text={site.promise} /></h1>
             <p className="hero-thesis"><LangText text={site.design.thesis} /></p>
             <div className="hero-actions">
-              <a className="primary-link" href="#offer">{site.cta}<span className="link-mark" aria-hidden="true" /></a>
+              <a className="primary-link" href={locked ? hubHref : '#offer'}>{locked ? 'ไปยัง bookchaowalit.com' : site.cta}<span className="link-mark" aria-hidden="true" /></a>
               {locked ? <span className="status-badge">ยังไม่เปิดรับงาน</span> : null}
             </div>
             {/* No portfolio link here: the readiness note below holds the page's one link to it (pSEO plan). */}
@@ -74,7 +74,7 @@ export default function HomePage() {
           </div>
           <div className="hero-art">
             <Artifact />
-            <p className="artifact-caption" lang="en">{site.design.artifactCaption}</p>
+            <p className="artifact-caption">{site.design.artifactCaption}</p>
           </div>
         </section>
 

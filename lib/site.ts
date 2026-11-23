@@ -27,11 +27,11 @@ export const site = {
     "world": "Chambers folio and redline",
     "material": "parchment / burgundy / redline",
     "thesis": "วางสิทธิ หน้าที่ และ legal handoff ให้เห็นเจ้าของงานและขอบเขตที่ต้องใช้ผู้มีใบอนุญาต",
-    "artifactCaption": "Capability map only — not a law firm and not legal advice.",
+    "artifactCaption": "ขีดความสามารถในอนาคตเท่านั้น ไม่ใช่สำนักงานกฎหมายและไม่ใช่คำแนะนำทางกฎหมาย",
     "colors": {
       "bg": "#f2e9dc",
       "ink": "#3b1d29",
-      "muted": "#715964",
+      "muted": "#6e5661",
       "line": "#cbb6ad",
       "panel": "#e5d5ca",
       "accent": "#a73348",
